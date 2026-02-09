@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+
+@property --background-color {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #191917;
+}
+
+@property --text-color {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #1C1C1C;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Google Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--text-color);
+}
