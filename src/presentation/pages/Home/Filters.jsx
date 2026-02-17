@@ -4,16 +4,16 @@ import styles from './Filters.module.css'
 
 const STATUS_OPTIONS = [
     { value: '', label: 'All Statuses' },
-    { value: 'stock', label: 'Stock' },
-    { value: 'showcase', label: 'Showcase' },
-    { value: 'sold', label: 'Sold' },
+    { value: 'STOCK', label: 'Stock' },
+    { value: 'SHOWCASE', label: 'Showcase' },
+    { value: 'SOLD', label: 'Sold' },
 ]
 
 const METAL_OPTIONS = [
     { value: '', label: 'All Metals' },
-    { value: 'gold', label: 'Gold' },
-    { value: 'silver', label: 'Silver' },
-    { value: 'platinum', label: 'Platinum' },
+    { value: 'GOLD', label: 'Gold' },
+    { value: 'SILVER', label: 'Silver' },
+    { value: 'PLATINUM', label: 'Platinum' },
 ]
 
 
