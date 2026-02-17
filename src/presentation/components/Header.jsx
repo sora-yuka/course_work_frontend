@@ -8,7 +8,7 @@ export default function Header() {
                 <button className={ styles.addNewItemButton}>
                     Add New Item
                 </button>
-                <button>
+                <button className={ styles.logoutButton }>
                     Logout
                 </button>
             </div>

@@ -11,14 +11,38 @@
 .actionControl {
     display: flex;
     align-items: center;
+    font-weight: 500;
     gap: 20px;
 }
 
 .addNewItemButton {
-    height: 48px;
+    height: 40px;
     padding: 2px 24px;
     --text-color: #fff;
     color: var(--text-color);
-    background-color: #3498db;
+    --background-color: #3498db;
+    background-color: var(--background-color);
     border-radius: 5px;
+    transition: all .2s;
+}
+
+.addNewItemButton:hover {
+    --background-color: #2980b9;
+    background-color: var(--background-color);
+}
+
+.logoutButton {
+    height: 40px;
+    padding: 2px 24px;
+    --text-color: #fff;
+    color: var(--text-color);
+    --background-color: #e74c3c;
+    background-color: var(--background-color);
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+.logoutButton:hover {
+    --background-color: #c0392b;
+    background-color: var(--background-color);
 }
