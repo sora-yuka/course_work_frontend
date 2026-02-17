@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { jwtDecode } from 'jwt-decode'
-import api from '../api/client'
-import { ACCESS_TOKEN, REFRESH_TOKEN } from '../constants'
+import api from '@infrastructure/api/client'
+import { ACCESS_TOKEN, REFRESH_TOKEN } from '@infrastructure/constants'
 
 
 const AuthContext = createContext()
@@ -23,11 +23,12 @@ export const AuthProvider = ({children}) => {
         refresh: refreshToken
       })
 
-      if (response.status === 200) { 
+      if (response.status === 200) {
+        console.log('Token refreshed successful')
         localStorage.setItem(ACCESS_TOKEN, response.data.access)
-        setIsAuthorized(true) 
-      } else { 
-        setIsAuthorized(false) 
+        setIsAuthorized(true)
+      } else {
+        setIsAuthorized(false)
       }
     } catch (error) {
       console.log(error)
@@ -38,8 +39,8 @@ export const AuthProvider = ({children}) => {
   const auth = async () => {
     const token = localStorage.getItem(ACCESS_TOKEN)
     if (!token) {
-      console.log('Token not found in local storage.')
-      setIsAuthorized(false)
+      console.log('Access token missing, attempting refresh...')
+      await refreshToken()
       return
     }
     const decoded = jwtDecode(token)

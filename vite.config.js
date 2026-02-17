@@ -22,6 +22,7 @@ export default defineConfig({
     alias: {
       '@infrastructure': path.resolve(projectRootDir, './src/infrastructure'),
       '@presentation': path.resolve(projectRootDir, './src/presentation'),
+      '@pages': path.resolve(projectRootDir, './src/presentation/pages'),
     }
   }
 })
