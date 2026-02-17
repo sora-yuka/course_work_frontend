@@ -1,27 +1,83 @@
 import { useState } from 'react'
+import { getStatsRequest } from '@infrastructure/api/inventory.api'
 import styles from './Filters.module.css'
 
+const STATUS_OPTIONS = [
+    { value: '', label: 'All Statuses' },
+    { value: 'stock', label: 'Stock' },
+    { value: 'showcase', label: 'Showcase' },
+    { value: 'sold', label: 'Sold' },
+]
 
-export default function Filters() {
-    const [searchTerm, setSearchTerm] = useState('')
+const METAL_OPTIONS = [
+    { value: '', label: 'All Metals' },
+    { value: 'gold', label: 'Gold' },
+    { value: 'silver', label: 'Silver' },
+    { value: 'platinum', label: 'Platinum' },
+]
+
+
+export default function Filters({ onSearch }) {
+    const [form, setForm] = useState({
+        search: '',
+        status: '',
+        metal: '',
+    })
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setForm((prev) => ({ ...prev, [name]: value }))
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        onSearch(form)
+    }
 
     return (
         <div className={ styles.container }>
             <div className={ styles.searchBar}>
-                <input
-                    type='text'
-                    value={ searchTerm }
-                    onChange={ (e) => setSearchTerm(e.target.value ) }
-                    placeholder='Search'
-                    className={ styles.searchInput }
-                />
+                <form className={ styles.form } onSubmit={ handleSubmit }>
+                    <input
+                        name='search'
+                        value={ form.search }
+                        onChange={ handleChange }
+                        placeholder='Search UIN or SKU'
+                        className={ styles.searchInput }
+                    />
+                    <button className={ styles.button }>
+                        <img src="./src/presentation/assets/send-horizontal.svg" alt="" />
+                    </button>
+                </form>
             </div>
             <div className={ styles.dropFilter }>
                 <div className={ styles.dropStatus }>
-                    drop status filter
+                    <select
+                        name='status'
+                        value={ form.status }
+                        onChange={ handleChange }
+                        className={ styles.select }
+                    >
+                        { STATUS_OPTIONS.map((opt) => (
+                            <option key={ opt.value } value={ opt.value }>
+                                { opt.label }
+                            </option>
+                        )) }
+                    </select>
                 </div>
                 <div className={ styles.dropMetal }>
-                    drop metal filter
+                    <select
+                        name='metal'
+                        value={ form.metal }
+                        onChange={ handleChange }
+                        className={ styles.select }
+                    >
+                        { METAL_OPTIONS.map((opt) => (
+                            <option key={ opt.value } value={ opt.value }>
+                                { opt.label }
+                            </option>
+                        )) }
+                    </select>
                 </div>
             </div>
         </div>
