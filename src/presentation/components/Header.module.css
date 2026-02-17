@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.actionControl {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.addNewItemButton {
+    height: 48px;
+    padding: 2px 24px;
+    --text-color: #fff;
+    color: var(--text-color);
+    background-color: #3498db;
+    border-radius: 5px;
+}
