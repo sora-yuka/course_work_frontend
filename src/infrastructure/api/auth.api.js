@@ -10,3 +10,8 @@ export const loginRequest = async (email, password) => {
   localStorage.setItem(REFRESH_TOKEN, response.data.refresh)
   return response
 }
+
+export const logoutRequest = async () => {
+  localStorage.clear()
+  return
+}

@@ -23,6 +23,7 @@ export default defineConfig({
       '@infrastructure': path.resolve(projectRootDir, './src/infrastructure'),
       '@presentation': path.resolve(projectRootDir, './src/presentation'),
       '@pages': path.resolve(projectRootDir, './src/presentation/pages'),
+      '@components': path.resolve(projectRootDir, './src/presentation/components'),
     }
   }
 })

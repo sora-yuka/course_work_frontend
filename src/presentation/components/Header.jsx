@@ -1,17 +1,32 @@
+import { useNavigate } from 'react-router-dom'
+import { logoutRequest } from '@infrastructure/api/auth.api'
 import styles from './Header.module.css'
 
 export default function Header() {
+    const navigate = useNavigate()
+
+    const handleLogout = async () => {
+        await logoutRequest()
+        navigate('/login')
+    }
+
+    const handleAddItem = async () => {
+
+    }
+
     return (
-        <div className={ styles.header}>
-            <h3 className={ styles.title }>Jewelry Inventory Dashboard</h3>
-            <div className={ styles.actionControl }>
-                <button className={ styles.addNewItemButton}>
-                    Add New Item
-                </button>
-                <button className={ styles.logoutButton }>
-                    Logout
-                </button>
+        <header className={ styles.container }>
+            <div className={ styles.header}>
+                <h3 className={ styles.title }>Jewelry Inventory Dashboard</h3>
+                <div className={ styles.actionControl }>
+                    <button className={ styles.createNewButton}>
+                        + Create new
+                    </button>
+                    <button className={ styles.logoutButton } onClick={ handleLogout }>
+                        Exit
+                    </button>
+                </div>
             </div>
-        </div>
+        </header>
     )
 }

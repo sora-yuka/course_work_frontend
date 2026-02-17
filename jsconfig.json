@@ -5,6 +5,7 @@
             "@infrastructure/*": ["src/infrastructure/*"],
             "@presentation/*": ["src/presentation/*"],
             "@pages/*": ["src/presentation/pages/*"],
+            "@components/*": ["src/presentation/components/*"],
         }
     }
 }

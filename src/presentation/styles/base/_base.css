@@ -4,13 +4,20 @@
 @property --background-color {
     syntax: '<color>';
     inherits: false;
-    initial-value: #F1F2F4;
+    /* initial-value: #F1F2F4; */
+    initial-value: #ededed;
 }
 
 @property --text-color {
     syntax: '<color>';
     inherits: false;
     initial-value: #1c1c1c;
+}
+
+@property --border-color {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #b8b8b8;
 }
 
 html, body {

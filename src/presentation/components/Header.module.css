@@ -1,4 +1,11 @@
+.container {
+    border-bottom: 1px solid var(--border-color);
+}
+
 .header {
+    max-width: 1200px;
+    padding: 20px 10px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
@@ -15,30 +22,28 @@
     gap: 20px;
 }
 
-.addNewItemButton {
-    height: 40px;
+.createNewButton {
+    height: 48px;
     padding: 2px 24px;
-    --text-color: #fff;
-    color: var(--text-color);
-    --background-color: #3498db;
-    background-color: var(--background-color);
-    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     transition: all .2s;
 }
 
-.addNewItemButton:hover {
-    --background-color: #2980b9;
+.createNewButton:hover {
+    --background-color: #e0e0e0;
     background-color: var(--background-color);
 }
 
 .logoutButton {
-    height: 40px;
+    height: 48px;
     padding: 2px 24px;
     --text-color: #fff;
     color: var(--text-color);
     --background-color: #e74c3c;
     background-color: var(--background-color);
-    border-radius: 5px;
+    border-radius: 24px;
     transition: all .2s;
 }
 
