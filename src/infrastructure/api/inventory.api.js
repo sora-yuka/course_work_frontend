@@ -6,7 +6,12 @@ export const getStatsRequest = async () => {
     return response
 }
 
-export const getInventory = async (qParams) => {
+export const getInventoryQuery = async (qParams) => {
     const response = await api.get(`api/v1/inventory/read/?${qParams.toString()}`)
+    return response
+}
+
+export const getInventory = async () => {
+    const response = await api.get('api/v1/inventory/read/')
     return response
 }
