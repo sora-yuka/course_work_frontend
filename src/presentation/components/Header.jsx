@@ -19,11 +19,9 @@ export default function Header() {
             <div className={ styles.header}>
                 <h3 className={ styles.title }>Jewelry Inventory Dashboard</h3>
                 <div className={ styles.actionControl }>
-                    <button className={ styles.createNewButton}>
-                        + Create new
-                    </button>
+                    {/* <button className=e */}
                     <button className={ styles.logoutButton } onClick={ handleLogout }>
-                        Exit
+                        <img src="/src/presentation/assets/power.svg" alt="" />
                     </button>
                 </div>
             </div>
